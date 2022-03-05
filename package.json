@@ -1,0 +1,25 @@
+{
+  "name": "steem-randbot",
+  "version": "1.0.0",
+  "description": "남는 보팅파워를 효율적으로 이용하기 위해 제작. VP가 99% 이상일 경우 랜덤 보팅 수행",
+  "main": "index.js",
+  "scripts": {
+    "start": "node steem-randbot"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wonsama/steem-randbot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wonsama/steem-randbot/issues"
+  },
+  "homepage": "https://github.com/wonsama/steem-randbot#readme",
+  "dependencies": {
+    "axios": "^0.26.0",
+    "moment": "^2.29.1",
+    "steem": "^0.7.11"
+  }
+}
