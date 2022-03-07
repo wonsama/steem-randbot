@@ -64,9 +64,9 @@ async function start() {
     );
     console.log("targets.length", targets.length);
 
-    // 첫번째 항목을 보팅 수행
+    // 맨 뒤 항목을 보팅 수행
     if (targets.length > 0) {
-      let t = targets[0];
+      let t = targets[targets.length - 1];
       await vote(
         VOTING_POSTING_KEY,
         VOTING_ID,
