@@ -54,12 +54,15 @@ async function start() {
 
   if (bal.vp > VOTING_LIMIT) {
     // 트랜드에서 타켓을 찾아 보팅을 수행한다
-    let tran = await getStateWith("/trending");
+    // 그나마 스코판에서 글 찾는 것이 제일 좋아 보임
+    // kr의 경우 외국인들이 장악 ...
+    let tran = await getStateWith("/created/hive-101145");
 
     // 이미 보팅한 대상은 제거한다
     let targets = objToArr(tran.content).filter(
       (x) => x.active_votes.filter((y) => y.voter == VOTING_ID).length == 0
     );
+    console.log("targets.length", targets.length);
 
     // 첫번째 항목을 보팅 수행
     if (targets.length > 0) {
@@ -82,6 +85,7 @@ async function start() {
         permlink: t.permlink,
         url: `https://steemit.com${t.url}`,
         created: t.created,
+        works: moment().format("YYYY-MM-DD hh:mm:ss"),
       });
       fs.writeFileSync(votedPath, JSON.stringify(voted, null, 2));
     }
